@@ -1,0 +1,15 @@
+MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
+MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
+MPI startup(): PMI server not found. Please set I_MPI_PMI_LIBRARY variable if it is not a singleton case.
+Hello World from Step 1 on Node 0, (compute-dy-t3medium-2)
+Hello World from Step 1 on Node 0, (compute-dy-t3medium-1)
+Hello World from Step 1 on Node 0, (compute-dy-t3medium-3)
+Hello World from Step 2 on Node 0, (compute-dy-t3medium-2)
+Hello World from Step 2 on Node 0, (compute-dy-t3medium-1)
+Hello World from Step 2 on Node 0, (compute-dy-t3medium-3)
+Hello World from Step 3 on Node 0, (compute-dy-t3medium-2)
+Hello World from Step 3 on Node 0, (compute-dy-t3medium-1)
+Hello World from Step 3 on Node 0, (compute-dy-t3medium-3)
+Hello World from Step 4 on Node 0, (compute-dy-t3medium-2)
+Hello World from Step 4 on Node 0, (compute-dy-t3medium-1)
+Hello World from Step 4 on Node 0, (compute-dy-t3medium-3)

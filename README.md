@@ -18,3 +18,6 @@ mpicc mpi_hello_world.c -o mpi_hello_world
 mpirun -n 4 ./mpi_hello_world
 ```
    
+* Perf testing:
+* https://www.hpcworkshops.com/04-amazon-fsx-for-lustre/05-performance-test.html
+* https://github.com/eshnil2000/ior-hpc-cluster
