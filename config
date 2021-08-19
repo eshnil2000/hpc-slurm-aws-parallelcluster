@@ -1,0 +1,76 @@
+[aws]
+aws_region_name = us-west-1
+
+[aliases]
+ssh = ssh {CFN_USER}@{MASTER_IP} {ARGS}
+
+[global]
+cluster_template = default
+update_check = true
+sanity_check = true
+
+[cluster default]
+key_name = aws-poc
+scheduler = slurm
+master_instance_type = c5.xlarge
+base_os = centos8
+vpc_settings = default
+queue_settings = compute, spot-queue,od-queue,cfd
+
+[vpc default]
+vpc_id = vpc-0ef47d9d185bfe3b4
+master_subnet_id = subnet-07f50b9794849305e
+compute_subnet_id = subnet-07b9bdf9266512e32
+use_public_ips = false
+
+[queue compute]
+enable_efa = false
+enable_efa_gdr = false
+compute_resource_settings = default
+
+[compute_resource default]
+instance_type = t3.medium
+
+[queue od-queue]
+compute_resource_settings = c5-od
+compute_type = ondemand
+disable_hyperthreading = true
+enable_efa = false
+placement_group = DYNAMIC
+
+[queue spot-queue]
+compute_resource_settings = c5-spot
+compute_type = spot
+disable_hyperthreading = true
+enable_efa = false
+placement_group = DYNAMIC
+
+[compute_resource c5-od]
+instance_type = c5.xlarge
+min_count = 0
+max_count = 10
+initial_count = 2
+
+[compute_resource c5-spot]
+instance_type = c5.large
+min_count = 0
+max_count = 10 
+
+[queue cfd]
+compute_resource_settings = mesh-compute, sim-compute
+compute_type = ondemand
+disable_hyperthreading = true
+enable_efa = false 
+placement_group = DYNAMIC
+
+[compute_resource mesh-compute]
+instance_type = c5n.large
+min_count = 0
+max_count = 6
+initial_count = 2
+
+[compute_resource sim-compute]
+instance_type = c5n.xlarge
+min_count = 0
+max_count = 16  
+initial_count = 2
