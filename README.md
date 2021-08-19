@@ -7,3 +7,6 @@
 ```
 sbatch --partition=cfd submission_script.sbatch
 ```
+* Add lustre filesystem
+* reference: https://www.hpcworkshops.com/04-amazon-fsx-for-lustre/02-configure-pc-fsx.html
+* 
