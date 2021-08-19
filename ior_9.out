@@ -1,0 +1,53 @@
+IOR-3.3.0+dev: MPI Coordinated Test of Parallel I/O
+Began               : Thu Aug 19 22:12:02 2021
+Command line        : /shared/ior/bin/ior -w -r -o=/lustre/test_dir -b=256m -a=POSIX -i=5 -F -z -t=64m -C
+Machine             : Linux spot-queue-dy-c5large-1
+TestID              : 0
+StartTime           : Thu Aug 19 22:12:02 2021
+Path                : /lustre
+FS                  : 1.1 TiB   Used FS: 0.0%   Inodes: 6.7 Mi   Used Inodes: 0.0%
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /lustre/test_dir
+access              : file-per-process
+type                : independent
+segments            : 1
+ordering in a file  : random
+ordering inter file : constant task offset
+task offset         : 1
+tasks               : 2
+clients per node    : 1
+repetitions         : 5
+xfersize            : 64 MiB
+blocksize           : 256 MiB
+aggregate filesize  : 512 MiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s) iter
+------    ---------  ---------- ---------  --------   --------   --------   -------- ----
+write     1109.18    262144     65536      0.000991   0.460184   0.031099   0.461604   0   
+read      1048.48    262144     65536      0.001197   0.487782   0.046072   0.488327   0   
+remove    -          -          -          -          -          -          0.045569   0   
+write     1334.30    262144     65536      0.000463   0.380171   0.013508   0.383723   1   
+read      1117.65    262144     65536      0.001662   0.456983   0.033769   0.458103   1   
+remove    -          -          -          -          -          -          0.044637   1   
+write     1468.64    262144     65536      0.000334   0.347853   0.009827   0.348622   2   
+read      849.28     262144     65536      0.000707   0.602242   0.034535   0.602862   2   
+remove    -          -          -          -          -          -          0.052092   2   
+write     1452.14    262144     65536      0.000370   0.351984   0.003259   0.352583   3   
+read      1064.54    262144     65536      0.000629   0.480307   0.015294   0.480958   3   
+remove    -          -          -          -          -          -          0.044818   3   
+write     404.89     262144     65536      0.000426   1.26       0.083348   1.26       4   
+read      687.30     262144     65536      0.000320   0.744426   0.002007   0.744946   4   
+remove    -          -          -          -          -          -          0.044603   4   
+Max Write: 1468.64 MiB/sec (1539.98 MB/sec)
+Max Read:  1117.65 MiB/sec (1171.94 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        1468.64     404.89    1153.83     395.87      22.95       6.33      18.03       6.19    0.56222         NA            NA     0      2   1    5   1     1        1         0    0      1 268435456 67108864     512.0 POSIX      0
+read         1117.65     687.30     953.45     161.26      17.46      10.74      14.90       2.52    0.55504         NA            NA     0      2   1    5   1     1        1         0    0      1 268435456 67108864     512.0 POSIX      0
+Finished            : Thu Aug 19 22:12:07 2021
