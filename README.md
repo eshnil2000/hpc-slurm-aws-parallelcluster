@@ -1,6 +1,8 @@
 # hpc-slurm-aws-parallelcluster
 * Install pcluster : https://docs.aws.amazon.com/parallelcluster/latest/ug/install.html
 * Create cluster: pcluster create -c config
+*
+### FOllow workshop : https://www.hpcworkshops.com/03-hpc-aws-parallelcluster-workshop.html
 * config file with multiple queues/ instance types:
 * https://github.com/eshnil2000/hpc-slurm-aws-parallelcluster/blob/main/config
 * reference : https://docs.aws.amazon.com/parallelcluster/latest/ug/multiple-queue-mode-slurm-user-guide.html
